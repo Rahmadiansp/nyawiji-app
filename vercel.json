@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "builds": [
+  "routes": [
     {
-      "src": "vite.config.ts",
-      "use": "@vercel/vite"
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ]
+  ],
+  "outputDirectory": "build"
 }
